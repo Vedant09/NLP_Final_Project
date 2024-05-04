@@ -1,40 +1,60 @@
-<img width="1204" alt="image" src="https://github.com/MarkChenYutian/T5-Sentinel-public/assets/47029019/ebbab6c4-e1c4-4cca-9df4-78a72fe79135">
+## Group Members:
 
+- HARSHA MASANDRAPALYA VANARAJAIAH</hr>
+- VEDANT VENKATESH YELSANGIKAR</hr>
+- KAVYA TOLETY
 
-**Release repo for our work "Token Prediction as Implicit Classification to Identify LLM-Generated Text"**
+## The Original Research Paper Source : https://aclanthology.org/2023.emnlp-main.810/
 
-## Abstract
+## Overview :
 
-This paper introduces a novel approach for identifying the possible large language models (LLMs) involved in text generation. Instead of adding an additional classification layer to a base LM, we reframe the classification task as a next-token prediction task and directly fine-tune the base LM to perform it. We utilize the Text-to-Text Transfer Transformer (T5) model as the backbone for our experiments. We compared our approach to the more direct approach of utilizing hidden states for classification. Evaluation shows the exceptional performance of our method in the text classification task, highlighting its simplicity and efficiency. Furthermore, interpretability studies on the features extracted by our model reveal its ability to differentiate distinctive writing styles among various LLMs even in the absence of an explicit classifier. We also collected a dataset named OpenLLMText, containing approximately 340k text samples from human and LLMs, including GPT3.5, PaLM, LLaMA, and GPT2.
+We have Replicated the original paper "Token Prediction as Implicit Classification to Identify LLM-Generated Text" for the CS678 Final project, class of Spring 2024
 
-## Evaluation Result Overview
+## Checkpoint 2, Reproduce :
 
-<img width="1413" alt="image" src="https://github.com/MarkChenYutian/T5-Sentinel-public/assets/47029019/94bc13a8-e164-4e5f-ba75-91139b05c167">
+Clone the project repository from the following link: **TOBDO**
+Then, upload it to Google Drive. We used Google Colab to run this project, so you can access the code there.
 
+## Requirement :
 
-## Requirement
+1. Run `!pip3 install -r requirements.txt` to install dependencies.
 
-Run `pip install -r requirements.txt` to install dependencies.
+2. To set the PYTHONPATH environment variable in Google Colab:
+   import os
 
-> Note that the baseline model proposed by Solaiman et al. requires a legacy version of library `transformers`, the detailed environment requirements
-> for baseline model is placed in [here](https://github.com/MarkChenYutian/T5-Sentinel-public/blob/main/detector/solaiman_classifier/solaiman_requirements.txt)
+## Set PYTHONPATH to include the project directory
 
-## Evaluate
+project_path = "/content/drive/MyDrive/T5-Sentinel-public"
+os.environ['PYTHONPATH'] += f":{project_path}"
 
-1. Run `./data/download.py` to automatically download dataset & model checkpoints
-2. Run the following files in need
-   1. `./evaluator/calc/calc_accuracy.py` to calculate the accuracy under different settings for each module
-   2. `./evaluator/interpret/integrated_gradient.ipynb` to calculate the integrated gradient for samples
-   3. `./evaluator/interpret/sample_pca.py` to calculate the PCA analysis for hidden layers of the test subset
-   4. `./evaluator/plot/*.py` to generate plots of related metrics (confusion matrix, roc, det, etc.)
+## Optional: Print PYTHONPATH to verify the change
 
-**Note that python files are in module**, so to use `./evaluator/calc/calc_accuracy.py`, you need to run `python3 -m evaluator.calc.calc_accuracy`.
+print("PYTHONPATH:", os.environ['PYTHONPATH'])
 
-## Train
+## Training :
 
-1. Use the `./detector/t5/arbitrary/__main__.py` to train the T5-Sentinel Model
+The datasets have already been generated and downloaded to the appropriate folders. You can find them here: **TOBDO**
 
-    (The detailed hyperparameter setup we used for training the T5-Sentinel model in paper is presented in `settings_0613_full.yaml`)
+    1.  `To Train the t5_sentienl model` - !python3 detector/t5_sentinel/_main_.py
 
-2. Use the `./detector/t5/arbitrary_hidden/__main__.py` to train the T5-Hidden Model
+**NOTE** : When executing the training command, authentication through Wandb is required. Choose option 2 to indicate that you have an account, and then input the following API value - b0a6fecc14383f64f17b5bbd81acc18b7d864c55 to initiate model training.
+You can find the Python notebook for reference at the following link: project.ipynb (https://github.com/vashihatej/NLP_Project/blob/main/project.ipynb)
 
+## Observations :
+
+    Trainig accuracy:
+    Hyperparameters used:
+
+    Try it out :  To Change the Hyperparameters you can go the location :
+
+    we can observe the metrics output using wihci we have evaluated our model and they are
+
+    The model evaluation metrics which were used to evaluate our model are as follows:
+        F1 Score: 0.0
+        Recall: 0.00
+        Precision: 0.00
+        Confusion Matrix Accuracy: 0.00
+
+Observations on error analysis of 5 sample outputs:
+
+Plotted confusion matrix image can be found here -
