@@ -1,0 +1,5 @@
+This file is dynamically generated from sample_pca.py, do not modify
+TOP: [urlsf_subset09]-[44744], {'source': 'chatgpt', 'variant': 'original'}
+RIGHT: [urlsf_subset09]-[183224], {'source': 'palm', 'variant': 'original'}
+BOTTOM: [urlsf_subset09]-[219341], {'variant': 'original', 'source': 'llama'}
+LEFT: gpt2_255572, {'variant': 'original', 'source': 'gpt2_xl'}
